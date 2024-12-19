@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetic Palette</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6200EA">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin: 0;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #444;
+            color: #e0e0e0;
+            padding: 1em 0;
+            margin-bottom: 1em;
+        }
+        #poem {
+            margin: 2em;
+            padding: 1.5em;
+            border: 1px solid #555;
+            border-radius: 10px;
+            background: #3a3a3a;
+            font-size: 1.2em;
+            line-height: 1.6em;
+        }
+        button {
+            background-color: #555;
+            color: #e0e0e0;
+            border: none;
+            padding: 0.8em 1.2em;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 1em;
+        }
+        button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Poetic Palette</h1>
+        <h2>by: James Patrick Dizon</h2>
+    </header>
+    <div id="poem">
+        <p>Click the button to discover a short poem!</p>
+    </div>
+    <button id="fetchPoem">Show Me a Poem</button>
+
+    <script>
+        const poems = [
+            {
+                title: "A Dream Within a Dream",
+                author: "Edgar Allan Poe",
+                lines: [
+                    "All that we see or seem",
+                    "Is but a dream within a dream."
+                ]
+            },
+            {
+                title: "Fire and Ice",
+                author: "Robert Frost",
+                lines: [
+                    "Some say the world will end in fire,",
+                    "Some say in ice."
+                ]
+            },
+            {
+                title: "Still I Rise",
+                author: "Maya Angelou",
+                lines: [
+                    "You may trod me in the very dirt",
+                    "But still, like dust, I'll rise."
+                ]
+            },
+            {
+                title: "Hope is the thing with feathers",
+                author: "Emily Dickinson",
+                lines: [
+                    "Hope is the thing with feathers",
+                    "That perches in the soul."
+                ]
+            }
+        ];
+
+        let currentIndex = -1;
+
+        document.getElementById('fetchPoem').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % poems.length;
+            const selectedPoem = poems[currentIndex];
+
+            const poemContainer = document.getElementById('poem');
+            poemContainer.innerHTML = `
+                <h2>${selectedPoem.title}</h2>
+                <h4>by ${selectedPoem.author}</h4>
+                <pre>${selectedPoem.lines.join('\n')}</pre>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "name": "Poetic Palette",
+    "short_name": "Poetry",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f9f9f9",
+    "theme_color": "#6200EA",
+    "icons": [
+      {
+        "src": "C:\Users\63912\OneDrive\Documents\Final Project on PT\icons\coveer.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "C:\Users\63912\OneDrive\Documents\Final Project on PT\icons\dizonnnn.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
